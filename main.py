@@ -12,7 +12,7 @@ mensajes_extra = [
 
 @app.route("/", methods=["GET"])
 def mensaje():
-    ahora = (datetime.utcnow() - timedelta(hours=3)).time
+    ahora = (datetime.utcnow() - timedelta(hours=3)).time()
     dia = ahora.strftime("%A")
     hora = ahora.strftime("%H:%M")
 
