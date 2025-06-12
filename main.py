@@ -1,5 +1,5 @@
 from flask import Flask, jsonify
-from datetime import datetime
+from datetime import datetime, timedelta
 import random
 
 app = Flask(__name__)
@@ -12,7 +12,7 @@ mensajes_extra = [
 
 @app.route("/", methods=["GET"])
 def mensaje():
-    ahora = datetime.now()
+    ahora = (datetime.datetime.utcnow() - timedelta(hours=3)).time
     dia = ahora.strftime("%A")
     hora = ahora.strftime("%H:%M")
 
